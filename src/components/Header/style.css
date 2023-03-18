@@ -1,0 +1,13 @@
+.header {
+    @apply px-4 py-2;
+}
+  
+.movable-section {
+    background-color: #869686;
+    color: white;
+    @apply flex flex-row items-center w-auto px-4 py-2;
+}
+  
+.main-logo {
+    @apply w-20;
+}
