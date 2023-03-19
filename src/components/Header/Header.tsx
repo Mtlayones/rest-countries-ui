@@ -5,7 +5,7 @@ export const Header = () => {
 	return (
 		<header className='header'>
 			<section className='movable-section'>
-				<img className='main-logo' src={globeIcon} alt='Globe Icon' />
+				<img className='main-logo' src={globeIcon} alt='' />
 				<h1>List of Countries</h1>
 			</section>
 		</header>

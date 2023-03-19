@@ -1,0 +1,41 @@
+.dropdown {
+    background-color: theme('colors.accent');
+    @apply relative inline-block rounded;
+}
+
+.dropdown .visible {
+    @apply flex flex-wrap items-center;
+}
+
+.visible .label {
+    color: theme('colors.text-main');
+    @apply px-2.5 font-medium;
+}
+
+.visible .button {
+    background-color: theme('colors.primary');
+    @apply flex items-center px-4 py-2 font-semibold rounded-r;
+}
+
+.dropdown .icon{
+    @apply w-4 mr-2;
+}
+
+.dropdown .contents{
+    background-color: theme('colors.accent');
+    @apply origin-top right-0 shadow absolute scale-95 transform transition duration-200 ease-in-out rounded top-full p-1;
+}
+
+.contents .option{
+    cursor: pointer;
+    @apply flex items-center font-medium px-3 py-1 ;
+}
+
+
+.contents .option:hover{
+    background-color: #9aff9a;
+}
+
+.contents .option:active {
+    background-color: theme('colors.primary');
+}

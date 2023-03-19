@@ -1,11 +1,12 @@
+
 .header {
-    @apply px-4 py-2;
+    @apply p-4;
 }
   
 .movable-section {
-    background-color: #869686;
-    color: white;
-    @apply flex flex-row items-center w-auto px-4 py-2;
+    background-color: theme('colors.text-main');
+    color: theme('colors.text-alternative');
+    @apply flex flex-row items-center w-auto px-4 py-2 rounded;
 }
   
 .main-logo {
