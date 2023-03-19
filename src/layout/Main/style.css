@@ -1,0 +1,7 @@
+.toolbar {
+    @apply flex items-center justify-between;
+}
+
+.toolbar .left{
+    @apply space-x-4;
+}

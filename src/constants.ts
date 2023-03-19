@@ -18,3 +18,41 @@ export const DEFAULT_SORT_OPTION = {
     value: 'asc',
     icon: BsSortAlphaDown,
 } as const;
+
+export const REGION_FILTER_OPTIONS = [
+    {
+        label: 'All Regions',
+        value: 'all',
+    },
+    {
+        label: 'Oceania',
+        value: 'Oceania',
+    },
+    
+] as const;
+
+export const DEFAULT_REGION_FILTER_OPTIONS = {
+    label: 'All Regions',
+    value: 'all'
+} as const;
+
+export const AREA_FILTER_OPTIONS = [
+    {
+        label: 'All Countries',
+        value: 'all',
+    },
+    {
+        label: 'Larger Than Lithuania',
+        value: 'larger',
+    },
+    {
+        label: 'Smaller Than Lithuania',
+        value: 'larger',
+    },
+    
+] as const;
+
+export const DEFAULT_AREA_FILTER_OPTIONS = {
+    label: 'All Countries',
+    value: 'all'
+} as const;

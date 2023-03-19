@@ -1,10 +1,11 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { DropdownOptions } from '../../types';
 import { useOnClickOutside } from '../../hooks/useOnClickOutside';
+import { BsFillCaretDownFill } from 'react-icons/bs';
 import './style.css';
 
 interface DropDownProps {
-	label: string;
+	label?: string;
 	currentValue: DropdownOptions;
 	items: readonly DropdownOptions[];
 	handleChange: (value: DropdownOptions) => void;
@@ -28,14 +29,19 @@ export const Dropdown = ({
 	return (
 		<div className='dropdown' ref={ref}>
 			<div className='visible'>
-				<label className='label'>{label}</label>
+				{label && <label className='label'>{label}</label>}
 				<button
 					className='button'
 					onClick={() =>
 						setIsClicked((prevState: boolean) => !prevState)
 					}>
-					<currentValue.icon className='icon' />
+					{currentValue.icon && (
+						<currentValue.icon className='icon' />
+					)}
 					{currentValue.label}
+					{currentValue.icon == null && (
+						<BsFillCaretDownFill className='down-icon' />
+					)}
 				</button>
 			</div>
 			{isClicked && (
@@ -45,7 +51,7 @@ export const Dropdown = ({
 							key={value.value}
 							onClick={() => handleChoose(value)}>
 							<div className='option'>
-								<value.icon className='icon' />
+								{value.icon && <value.icon className='icon' />}
 								{value.label}
 							</div>
 						</li>

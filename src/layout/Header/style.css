@@ -1,6 +1,6 @@
 
 .header {
-    @apply p-4;
+    @apply py-4;
 }
   
 .movable-section {

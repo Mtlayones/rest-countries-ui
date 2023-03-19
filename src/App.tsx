@@ -1,24 +1,13 @@
-import { ReactElement, useState } from 'react';
-import { Header } from './components/Header';
-import { Dropdown } from './components/Dropdown';
-import { DropdownOptions } from './types';
-import { SORT_OPTIONS, DEFAULT_SORT_OPTION } from './constants';
+import { Header } from './layout/Header';
+import { Main } from './layout/Main';
 import './App.css';
 
 const App = () => {
-	const [sortValue, setSortValue] =
-		useState<DropdownOptions>(DEFAULT_SORT_OPTION);
-
 	return (
-		<>
+		<div className='app'>
 			<Header />
-			<Dropdown
-				label='Sort by:'
-				currentValue={sortValue}
-				handleChange={(value) => setSortValue(value)}
-				items={SORT_OPTIONS}
-			/>
-		</>
+			<Main />
+		</div>
 	);
 };
 

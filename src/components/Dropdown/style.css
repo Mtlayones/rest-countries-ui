@@ -12,24 +12,34 @@
     @apply px-2.5 font-medium;
 }
 
-.visible .button {
-    background-color: theme('colors.primary');
-    @apply flex items-center px-4 py-2 font-semibold rounded-r;
-}
-
 .dropdown .icon{
     @apply w-4 mr-2;
 }
 
+.visible .button {
+    background-color: theme('colors.primary');
+    @apply flex items-center px-4 py-2 font-semibold rounded;
+}
+
+.visible .down-icon {
+    @apply ml-1;
+}
+
+
 .dropdown .contents{
     background-color: theme('colors.accent');
-    @apply origin-top right-0 shadow absolute scale-95 transform transition duration-200 ease-in-out rounded top-full p-1;
+    @apply origin-top right-0 shadow absolute scale-95 transform transition duration-200 ease-in-out rounded top-full p-1 w-fit;
 }
+
 
 .contents .option{
     cursor: pointer;
-    @apply flex items-center font-medium px-3 py-1 ;
+    @apply flex items-center text-base font-medium px-4 py-2 border-b border-divider;
 }
+
+.contents li:last-child .option{
+    @apply border-0;
+} 
 
 
 .contents .option:hover{
@@ -39,3 +49,4 @@
 .contents .option:active {
     background-color: theme('colors.primary');
 }
+
