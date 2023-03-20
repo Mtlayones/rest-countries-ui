@@ -29,5 +29,5 @@ h2{
   @apply xs:text-base  md:text-xl;
 }
 p{
-  @apply text-xs;
+  @apply xs:text-xs md:text-base;
 }
