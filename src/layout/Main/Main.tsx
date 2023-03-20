@@ -1,6 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Dropdown } from '../../components/Dropdown';
+import { Card } from '../../components/Card';
+import { ItemCard } from './ItemCard';
 import { DropdownOptions } from '../../types';
+import { CountriesModel, CountryModel } from '../../data/models';
 import {
 	SORT_OPTIONS,
 	DEFAULT_SORT_OPTION,
@@ -10,6 +13,7 @@ import {
 	DEFAULT_AREA_FILTER_OPTIONS,
 } from '../../constants';
 import './style.css';
+import restCountriesService from '../../data/restCountries';
 
 export const Main = () => {
 	const [sortValue, setSortValue] =
@@ -20,9 +24,22 @@ export const Main = () => {
 	const [areaFilter, setAreaFilter] = useState<DropdownOptions>(
 		DEFAULT_AREA_FILTER_OPTIONS
 	);
+	const [countries, setCountries] = useState<CountriesModel | undefined>();
+	const [lithuaniaData, setLithuaniaData] = useState<
+		CountryModel | undefined
+	>();
+
+	useEffect(() => {
+		restCountriesService
+			.getAllData()
+			.then((value) => setCountries(value as CountriesModel));
+		restCountriesService
+			.getLithuaniaData()
+			.then((value) => setLithuaniaData(value as CountryModel));
+	}, []);
 
 	return (
-		<main>
+		<main className='main-content'>
 			<div className='toolbar'>
 				<div className='left'>
 					<Dropdown
@@ -45,6 +62,22 @@ export const Main = () => {
 					items={SORT_OPTIONS}
 				/>
 			</div>
+			<section>
+				<ul className='card-group'>
+					{countries
+						?.getFilteredSorted(
+							sortValue.value,
+							regionFilter.value,
+							areaFilter.value,
+							lithuaniaData?.area
+						)
+						.map((item: CountryModel) => (
+							<li key={item.name}>
+								<ItemCard item={item} />
+							</li>
+						))}
+				</ul>
+			</section>
 		</main>
 	);
 };

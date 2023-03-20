@@ -50,10 +50,8 @@ export const Dropdown = ({
 						<li
 							key={value.value}
 							onClick={() => handleChoose(value)}>
-							<div className='option'>
-								{value.icon && <value.icon className='icon' />}
-								{value.label}
-							</div>
+							{value.icon && <value.icon className='icon' />}
+							{value.label}
 						</li>
 					))}
 				</ul>

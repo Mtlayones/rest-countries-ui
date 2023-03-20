@@ -1,0 +1,4 @@
+.card {
+    background-color: theme('colors.accent');
+    @apply p-4 rounded shadow-md flex justify-between items-center;
+}

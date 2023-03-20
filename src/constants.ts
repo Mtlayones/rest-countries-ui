@@ -47,7 +47,7 @@ export const AREA_FILTER_OPTIONS = [
     },
     {
         label: 'Smaller Than Lithuania',
-        value: 'larger',
+        value: 'smaller',
     },
     
 ] as const;

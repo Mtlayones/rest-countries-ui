@@ -27,26 +27,29 @@
 
 
 .dropdown .contents{
-    background-color: theme('colors.accent');
+    background-color: theme('colors.text-main');
+    color: theme('colors.text-alternative');
     @apply origin-top right-0 shadow absolute scale-95 transform transition duration-200 ease-in-out rounded top-full p-1 w-fit;
 }
 
-
-.contents .option{
+.contents li{
     cursor: pointer;
     @apply flex items-center text-base font-medium px-4 py-2 border-b border-divider;
 }
 
-.contents li:last-child .option{
+.contents li:last-child {
     @apply border-0;
+    
 } 
 
 
-.contents .option:hover{
+.contents li:hover{
     background-color: #9aff9a;
+    color: theme('colors.text-main');
 }
 
-.contents .option:active {
+.contents li:active {
     background-color: theme('colors.primary');
+    color: theme('colors.text-main');
 }
 

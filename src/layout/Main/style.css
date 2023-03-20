@@ -1,7 +1,24 @@
+
+.main-content {
+    @apply space-y-4 py-4;
+}
+
 .toolbar {
     @apply flex items-center justify-between;
 }
 
 .toolbar .left{
     @apply space-x-4;
+}
+
+.card-group{
+    @apply space-y-2;
+}
+
+.left-children {
+    @apply flex flex-col;
+}
+
+.right-children{
+    @apply w-20;
 }
