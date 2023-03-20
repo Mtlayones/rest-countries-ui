@@ -1,4 +1,4 @@
-import { CountriesModel, CountryModel } from './models';
+import {  CountryModel } from './models';
 import axios from '../utils/axios';
 
 const RESPONSE_OK: number = 200;
@@ -6,7 +6,7 @@ const RESPONSE_OK: number = 200;
 class RestCountriesService {
     getAllData = () => new Promise((resolve, reject) => {
         axios.get('/all?fields=name,region,area,flag').then((response) => {
-            if (response.status == RESPONSE_OK) resolve(new CountriesModel(response.data));
+            if (response.status == RESPONSE_OK) resolve(response.data.map((item: {name: string, region:string, area: number, independent: boolean, flag: string} )=> new CountryModel().fromJson(item)));
             else reject(response.status);
         }).catch((error)=>{
             reject(error);

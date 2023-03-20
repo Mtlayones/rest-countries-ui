@@ -1,10 +1,10 @@
 .dropdown {
     background-color: theme('colors.accent');
-    @apply relative inline-block rounded;
+    @apply relative block rounded;
 }
 
 .dropdown .visible {
-    @apply flex flex-wrap items-center;
+    @apply flex items-center;
 }
 
 .visible .label {
@@ -18,7 +18,9 @@
 
 .visible .button {
     background-color: theme('colors.primary');
-    @apply flex items-center px-4 py-2 font-semibold rounded;
+    @apply xs:justify-center;
+    @apply md:justify-start;
+    @apply flex flex-1 items-center px-4 py-2 font-semibold rounded;
 }
 
 .visible .down-icon {
@@ -29,7 +31,7 @@
 .dropdown .contents{
     background-color: theme('colors.text-main');
     color: theme('colors.text-alternative');
-    @apply origin-top right-0 shadow absolute scale-95 transform transition duration-200 ease-in-out rounded top-full p-1 w-fit;
+    @apply origin-top right-0 shadow absolute scale-95 transform transition duration-200 ease-in-out rounded top-full p-1 w-fit z-50;
 }
 
 .contents li{
@@ -44,7 +46,7 @@
 
 
 .contents li:hover{
-    background-color: #9aff9a;
+    background-color: theme('colors.hover');
     color: theme('colors.text-main');
 }
 

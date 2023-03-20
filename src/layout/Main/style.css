@@ -4,11 +4,16 @@
 }
 
 .toolbar {
-    @apply flex items-center justify-between;
+    @apply flex;
+    @apply xs:flex-col xs:justify-start xs:space-y-2;
+    @apply md:flex-row md:items-center md:justify-between md:space-y-0;
+    
 }
 
 .toolbar .left{
-    @apply space-x-4;
+    @apply flex;
+    @apply xs:space-y-2 xs:flex-col;
+    @apply md:flex-row md:space-y-0 md:space-x-4;
 }
 
 .card-group{
@@ -20,5 +25,13 @@
 }
 
 .right-children{
-    @apply w-20;
+    @apply xs:w-16 md:w-20;
+}
+
+.content {
+    @apply space-y-4;
+}
+
+.pagination {
+    @apply flex justify-end;
 }

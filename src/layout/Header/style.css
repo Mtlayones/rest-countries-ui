@@ -10,5 +10,5 @@
 }
   
 .main-logo {
-    @apply w-20;
+    @apply xs:w-16 md:w-20;
 }
